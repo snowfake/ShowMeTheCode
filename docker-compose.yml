@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  ocelotgateway:
+    image: ${DOCKER_REGISTRY-}ocelotgateway
+    build:
+      context: .
+      dockerfile: OcelotGateway/Dockerfile
+
+  taxajuros.api:
+    image: ${DOCKER_REGISTRY-}taxajurosapi
+    build:
+      context: .
+      dockerfile: TaxaJuros.API/Dockerfile
+
+
+  calculajuros.api:
+    image: ${DOCKER_REGISTRY-}calculajurosapi
+    build:
+      context: .
+      dockerfile: CalculaJuros.API/Dockerfile

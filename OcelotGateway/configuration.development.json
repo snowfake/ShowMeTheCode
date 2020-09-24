@@ -1,0 +1,79 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/calculajuros/valorinicial/{valorInicial}/meses/{nroMeses}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "calculajuros.api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/calculajuros/valorinicial/{valorInicial}/meses/{nroMeses}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "calculajuros"
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/calculajuros/{everywhere}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "calculajuros.api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/calculajuros/{everywhere}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "calculajuros"
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/showmethecode",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "calculajuros.api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/showmethecode",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "calculajuros"
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/taxajuros",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "taxajuros.api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/taxajuros",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "taxajuros"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "taxajuros",
+      "Config": [
+        {
+          "Name": "Taxa de Juros API",
+          "Version": "v1",
+          "Url": "http://taxajuros.api/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "calculajuros",
+      "Config": [
+        {
+          "Name": "Calcular Juros API",
+          "Version": "v1",
+          "Url": "http://calculajuros.api/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+
+  ocelotgateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "2000:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  taxajuros.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - PATH_BASE=/taxajuros.api
+    ports:
+      - "2020:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  calculajuros.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - PATH_BASE=/calculajuros.api
+    ports:
+      - "2030:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
